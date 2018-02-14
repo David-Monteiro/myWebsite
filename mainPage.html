@@ -3,26 +3,38 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="myCtrl">
+
 	<div class="container">
 		<h1>My Posts</h1>
 		<ul class="list-group">
 			<li class="list-group-item">
-				<strong>@davidMonteiro</strong>
+				<strong> {{firstName + lastName}}</strong>
 				<span> 1st post</span>
 			</li>
-			<li>				
-				<strong>@davidMonteiro</strong>
+			<li class="list-group-item">				
+				<strong>{{firstName + lastName}}</strong>
 				<span> 2nd post</span>
 			</li>
 		</ul>
 	</div>
 
-	<!-- Scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	
 	<script>
-		angular.module("app", [])
+		var app = angular.module('app', []);
+
+		app.controller('myCtrl', function($scope){
+			$scope.firstName = "david",
+			$scope.lastName = "Monteiro";
+		});
+
+
 	</script>
 </body>
 </html>
