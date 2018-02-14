@@ -4,7 +4,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
-<body>
+<body ng-app="app">
 	<div class="container">
 		<h1>My Posts</h1>
 		<ul class="list-group">
@@ -21,6 +21,8 @@
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	
+	<script>
+		angular.module("app", [])
+	</script>
 </body>
 </html>
