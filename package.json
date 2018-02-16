@@ -1,3 +1,24 @@
 {
-	"name": "myWebsite"
+  "name": "myWebsite",
+  "version": "1.0.2",
+  "description": "��#\u0000 \u0000m\u0000y\u0000W\u0000e\u0000b\u0000s\u0000i\u0000t\u0000e\u0000\r\u0000 \u0000",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Monteiro/myWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-Monteiro/myWebsite/issues"
+  },
+  "homepage": "https://github.com/David-Monteiro/myWebsite#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
 }
