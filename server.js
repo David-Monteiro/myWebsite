@@ -8,6 +8,10 @@ app.use(function(req, res, next) {
     console.log('Something is happening');
     next();
 });
+
+////////////Simple//Requests/////////////
+
+var Post = require('.models/post');
     /*GET method*/
 app.get('/', function (req, res) {
   //res.send('GET request success');
@@ -23,6 +27,8 @@ app.post('/', function (req, res) {
   console.log('POST request success');
   res.json({ message: 'JSON POST request success' });
 })
+
+//////////////////////////////////////
 
 app.listen(3000, function () {
     console.log('Server listening on', 3000);
