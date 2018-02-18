@@ -76,6 +76,14 @@ app.put('/api/posts/:post_id', function(req, res) {
 	});
 });
 
+app.delete('/api/posts/:post_id', function(req, res) {
+	Post.remove( { _id: req.params.post_id },
+	 function(err, post) {
+		if(err) { res.send(err); }
+		res.status(500).json({ message: 'delete was a success' });
+	});
+});
+
 
 /////////////////////////////////////////
 app.listen(3000, function () {
