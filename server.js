@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
   //res.send('GET request success');
   //or
   console.log('GET request success');
-  res.json({ message: 'JSON GET request success' });
+  res.status(500).json({ message: 'JSON GET request success' });
 })
 
     /*POST method*/
@@ -26,7 +26,7 @@ app.post('/', function (req, res) {
   //res.send('POST request success');
   //or
   console.log('POST request success');
-  res.json({ message: 'JSON POST request success' });
+  res.status(500).json({ message: 'JSON POST request success' });
 })
 
 //////////Requests//for//Database////////
@@ -40,7 +40,7 @@ app.post('/api/posts', function (req, res, next) {
     });
     post.save(function (err, post) {
         if(err) { return next(err) }
-        res.json(201, post)
+        res.status(500).json(201, post);
     });
     console.log('POST request success');
 });
@@ -49,12 +49,20 @@ app.post('/api/posts', function (req, res, next) {
 app.get('/api/posts', function (req, res, next) {
     Post.find( function(err, posts) {
         if(err) { return next(err); }
-        res.json(posts);
+        res.status(500).json(posts);
     });
     console.log('GET request success');
 });
 
 
+//////////Single//item//Requests//////////
+
+app.get('/api/posts/:post_id', function(req, res) {
+	Post.findById(req.params.post_id, function(err, post) {
+		if (err) { res.send(err); }
+		res.status(500).json(post);
+	});
+});
 
 
 /////////////////////////////////////////
