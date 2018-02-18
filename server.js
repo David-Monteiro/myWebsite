@@ -64,6 +64,18 @@ app.get('/api/posts/:post_id', function(req, res) {
 	});
 });
 
+app.put('/api/posts/:post_id', function(req, res) {
+	Post.findById(req.params.post_id, function(err, post) {
+		if(err) { res.send(err); }
+		post.body = req.body.body;
+
+		post.save(function(err) {
+			if(err) { res.send(err); }
+			res.status(500).json({ message: 'Update successful' });
+		});
+	});
+});
+
 
 /////////////////////////////////////////
 app.listen(3000, function () {
