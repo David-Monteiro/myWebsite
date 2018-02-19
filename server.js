@@ -14,20 +14,20 @@ var Post = require('./models/post');
 ////////////Simple//Requests/////////////
 
     /*GET method*/
-app.get('/', function (req, res) {
+/*app.get('/', function (req, res) {
   //res.send('GET request success');
   //or
   console.log('GET request success');
   res.status(500).json({ message: 'JSON GET request success' });
-})
+})*/
 
     /*POST method*/
-app.post('/', function (req, res) {
+/*app.post('/', function (req, res) {
   //res.send('POST request success');
   //or
   console.log('POST request success');
   res.status(500).json({ message: 'JSON POST request success' });
-})
+})*/
 
 //////////Requests//for//Database////////
 
@@ -82,6 +82,11 @@ app.delete('/api/posts/:post_id', function(req, res) {
 		if(err) { res.send(err); }
 		res.status(500).json({ message: 'delete was a success' });
 	});
+});
+
+///////Hosting//page//through//node///////////////////////////////
+app.get('/', function(req, res) {
+	res.sendFile(__dirname + '/src/index.html');
 });
 
 
