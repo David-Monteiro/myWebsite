@@ -48,8 +48,10 @@ app.post('/api/posts', function (req, res, next) {
     /*GET method*/
 app.get('/api/posts', function (req, res, next) {
     Post.find( function(err, posts) {
-        if(err) { return next(err); }
-        res.status(500).json(posts);
+        if(err) { console.log('GET error'); return next(err); }
+         console.log('GET done1');
+        res.json(posts);
+        console.log('GET done2');
     });
     console.log('GET request success');
 });

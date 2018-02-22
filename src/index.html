@@ -24,7 +24,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<script>
 		var app = angular.module('app', []);
-
+		/*app.config(['$qProvider', function($qProvider) {
+		     $qProvider.errorOnUnhandledRejections(false);
+		 }]);*/
 		app.controller('PostsCtrl', function($scope, $http){
 
 			$scope.addPost = function(){		
@@ -36,20 +38,30 @@
 						username : "david",
 						body : $scope.postBody
 					};
-					console.log("1st step");
+					console.log("POST: 1st step");
 					var res = $http.post('/api/posts', post)
 					.then( function(data, status, headers, config) {
-						console.log("success");
+						console.log("POST: success");
 					}, 
 					function(data, status, headers, config) {
-						console.error('Error');
+						console.error('POST: Error');
 					});		
 					// Making the field empty
 					//
 					$scope.body=null;
 				}
 			};
+
+			$http.get('/api/posts')
+			.then(function(posts){
+				$scope.posts = posts;
+				console.log("GET: success");
+			}, 
+			function(data, status, headers, config) {
+				console.log('GET: Error');
+			});		
 			
+
 
 			/*$http.get('http://localhost:3000/api/posts')
 				.success(function (posts) {
