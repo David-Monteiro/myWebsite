@@ -50,7 +50,7 @@
 					//
 					$scope.body=null;
 				}
-			};
+			};/*
 
 			$http.get('/api/posts')
 			.then(function(posts){
@@ -60,69 +60,15 @@
 			function(data, status, headers, config) {
 				console.log('GET: Error');
 			});		
-			
-
-
-			/*$http.get('http://localhost:3000/api/posts')
-				.success(function (posts) {
-				$scope.posts = posts;
-			});*/
-
-			/********************$http({
-				method: 'GET',
-				url: '/api/posts'
-				}).then(function successCallback(posts) {
-					$scope.posts = posts;
-					console.log("status:" + posts.status);
-				console.log("status:" + posts.status);
-				}, function errorCallback(posts) {
-					console.error('Error occurred:', posts.status, posts.data);
-			});//////////////////*/
-
-			/*$http.get('/api/posts').then(function (posts){
-				$scope.posts = posts;
-				console.log("status:" + posts.status);
-			}).catch(function(posts) {
-				console.error('Error occurred:', posts.status, posts.data);
-			}).finally(function() {
-				console.log("Task Finished.");
-			});*/
-			/*$http.get('/api/posts')
-  			.then(function(posts){ $scope.posts = posts; });*/
-
-		});
-
-/*
-				app.controller('PostsCtrl', function($scope, $http){
-			$scope.posts = [
-				{
-					username: 'david something',
-					body: '1st post'
-				},
-				{
-					username: 'something monteiro',
-					body: '2nd post'
-				}
-			],
-			$scope.addPost = function () {
-				if($scope.postBody){
-					$scope.posts.unshift({
-						username: "david monteiro",
-						body: $scope.postBody
-					})
-				}
-				$scope.postBody = null;
-
-			},
-			$http.get('http://localhost:3000/api/posts')
-				.success(function (posts) {
-				$scope.posts = posts;
+			*/
+			$http.get('/api/posts')
+  			.then(function(posts){ $scope.posts = posts; }, 
+			function(data, status, headers, config) {
+				console.log('GET: Error');
 			});
 
+
 		});
-
-*/
-
 
 	</script>
 </body>
