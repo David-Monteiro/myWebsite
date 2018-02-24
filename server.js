@@ -11,25 +11,8 @@ app.use(function(req, res, next) {
 
 var Post = require('./models/post');
 
-////////////Simple//Requests/////////////
 
-    /*GET method*/
-/*app.get('/', function (req, res) {
-  //res.send('GET request success');
-  //or
-  console.log('GET request success');
-  res.status(500).json({ message: 'JSON GET request success' });
-})*/
-
-    /*POST method*/
-/*app.post('/', function (req, res) {
-  //res.send('POST request success');
-  //or
-  console.log('POST request success');
-  res.status(500).json({ message: 'JSON POST request success' });
-})*/
-
-//////////Requests//for//Database////////
+//////////Basic//requests////////
 
     /*POST method*/
 var Post = require('./models/post');
@@ -49,16 +32,13 @@ app.post('/api/posts', function (req, res, next) {
 app.get('/api/posts', function (req, res, next) {
     Post.find( function(err, posts) {
         if(err) { console.log('GET error'); return next(err); }
-         console.log('GET done1');
         res.json(posts);
-        //res.send( 'JSON GET request success' );
-        console.log('GET done2');
     });
     console.log('GET request success');
 });
 
 
-//////////Single//item//Requests//////////
+//////////Basic//Requests//for//single//items////////
 
 app.get('/api/posts/:post_id', function(req, res) {
 	Post.findById(req.params.post_id, function(err, post) {

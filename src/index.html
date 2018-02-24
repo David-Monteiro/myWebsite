@@ -16,7 +16,6 @@
 				<strong>{{post.username}}</strong>
 				<span>{{post.body}}</span>
 			</li>
-			<!--<li>{{posts}}</li>-->
 			<li>asda</li>
 		</ul>
 	</div>
@@ -26,9 +25,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<script>
 		var app = angular.module('app', []);
-		/*app.config(['$qProvider', function($qProvider) {
-		     $qProvider.errorOnUnhandledRejections(false);
-		 }]);*/
+
 		app.controller('PostsCtrl', function($scope, $http){
 
 			$scope.addPost = function(){		
@@ -45,9 +42,9 @@
 					}, 
 					function(data, status, headers, config) {
 						console.error('POST: Error');
-					});		
+					});	
+						
 					// Making the field empty
-					//
 					$scope.body=null;
 				}
 			};
