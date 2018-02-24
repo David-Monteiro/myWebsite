@@ -51,6 +51,7 @@ app.get('/api/posts', function (req, res, next) {
         if(err) { console.log('GET error'); return next(err); }
          console.log('GET done1');
         res.json(posts);
+        //res.send( 'JSON GET request success' );
         console.log('GET done2');
     });
     console.log('GET request success');

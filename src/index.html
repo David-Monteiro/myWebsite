@@ -16,6 +16,8 @@
 				<strong>{{post.username}}</strong>
 				<span>{{post.body}}</span>
 			</li>
+			<!--<li>{{posts}}</li>-->
+			<li>asda</li>
 		</ul>
 	</div>
 
@@ -30,9 +32,7 @@
 		app.controller('PostsCtrl', function($scope, $http){
 
 			$scope.addPost = function(){		
-				/*$scope.companies.push({ 'name':$scope.name, 'employees': $scope.employees, 'headoffice':$scope.headoffice });*/
-				// Writing it to the server
-				//		
+		
 				if($scope.postBody) {
 					var post = {
 						username : "david",
@@ -50,19 +50,10 @@
 					//
 					$scope.body=null;
 				}
-			};/*
+			};
 
 			$http.get('/api/posts')
-			.then(function(posts){
-				$scope.posts = posts;
-				console.log("GET: success");
-			}, 
-			function(data, status, headers, config) {
-				console.log('GET: Error');
-			});		
-			*/
-			$http.get('/api/posts')
-  			.then(function(posts){ $scope.posts = posts; }, 
+  			.then(function(posts){ $scope.posts = posts.data; }, 
 			function(data, status, headers, config) {
 				console.log('GET: Error');
 			});
