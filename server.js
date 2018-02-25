@@ -30,9 +30,10 @@ app.post('/api/posts', function (req, res, next) {
 
     /*GET method*/
 app.get('/api/posts', function (req, res, next) {
-    Post.find( function(err, posts) {
-        if(err) { console.log('GET error'); return next(err); }
-        res.json(posts);
+        Post.find().sort('-date')
+         .exec(function(err, posts){
+            if(err) { console.log('GET error'); return next(err); }
+            res.json(posts);
     });
     console.log('GET request success');
 });
