@@ -12,11 +12,10 @@
 		<input ng-model="postBody" class"form-control" />
 		<button ng-click="addPost()" class="btn btn-default"> Add Posts </button>
 		<ul class="list-group">
-			<li class="list-group-item" ng-repeat='post in posts'>
+			<li class="list-group-item" ng-repeat="post in posts | orderBy:'-date'">
 				<strong>{{post.username}}</strong>
 				<span>{{post.body}}</span>
 			</li>
-			<li>asda</li>
 		</ul>
 	</div>
 
