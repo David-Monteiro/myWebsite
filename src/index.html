@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
-<body ng-app="app" ng-controller="PostsCtrl">
+<body ng-app="app" ng-controller="PostsCtrl" ng-init="getPosts()">
 
 	<div class="container">
 		<h1>Posts</h1>
@@ -37,6 +37,7 @@
 					console.log("POST: 1st step");
 					var res = $http.post('/api/posts', post)
 					.then( function(data, status, headers, config) {
+						$scope.getPosts();
 						console.log("POST: success");
 					}, 
 					function(data, status, headers, config) {
@@ -48,11 +49,13 @@
 				}
 			};
 
-			$http.get('/api/posts')
-  			.then(function(posts){ $scope.posts = posts.data; }, 
-			function(data, status, headers, config) {
-				console.log('GET: Error');
-			});
+			$scope.getPosts = function(){
+				var req = $http.get('/api/posts')
+				  .then(function(posts){ $scope.posts = posts.data; }, 
+				  function(data, status, headers, config) {
+					console.log('GET: Error');
+				});
+			};
 
 
 		});
