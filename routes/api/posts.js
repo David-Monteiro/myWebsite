@@ -12,7 +12,7 @@ router.route('/api/posts')
 		Post.find().sort('-date')
 		  .exec(function(err, posts){
 			if(err) { console.log('GET error'); return next(err); }
-			res.json(posts);
+			res.status(201).json(posts);
 		});
 		console.log('GET request success');
 	})
@@ -24,7 +24,7 @@ router.route('/api/posts')
 		});
 		post.save(function (err, post) {
 			if(err) { return next(err) }
-			res.status(500).json(201, post);
+			res.status(201).json(post);
 		});
 		console.log('POST request success');
 });
@@ -40,7 +40,7 @@ router.route('/api/posts/:post_id')
 	.get(function(req, res) {
 		Post.findById(req.params.post_id, function(err, post) {
 			if (err) { res.send(err); }
-			res.json(posts);
+			res.status(201).json(post);
 		});
 	})
 
@@ -51,7 +51,7 @@ router.route('/api/posts/:post_id')
 
 			post.save(function(err) {
 				if(err) { res.send(err); }
-				res.status(500).json({ message: 'Update successful' });
+				res.status(201).json({ message: 'Update successful' });
 			});
 		});
 	})
@@ -59,7 +59,7 @@ router.route('/api/posts/:post_id')
 	.delete(function(req, res) {
 		Post.remove( { _id: req.params.post_id }, function(err, post) {
 			if(err) { res.send(err); }
-			res.status(500).json({ message: 'delete was a success' });
+			res.status(201).json({ message: 'delete was a success' });
 		});
 });
 
