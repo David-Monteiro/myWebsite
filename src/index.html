@@ -22,44 +22,6 @@
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	<script>
-		var app = angular.module('app', []);
-
-		app.controller('PostsCtrl', function($scope, $http){
-
-			$scope.addPost = function(){		
-		
-				if($scope.postBody) {
-					var post = {
-						username : "david",
-						body : $scope.postBody
-					};
-					console.log("POST: 1st step");
-					var res = $http.post('/api/posts', post)
-					.then( function(data, status, headers, config) {
-						$scope.getPosts();
-						console.log("POST: success");
-					}, 
-					function(data, status, headers, config) {
-						console.error('POST: Error');
-					});	
-						
-					// Making the field empty
-					$scope.postBody=null;
-				}
-			};
-
-			$scope.getPosts = function(){
-				var req = $http.get('/api/posts')
-				  .then(function(posts){ $scope.posts = posts.data; }, 
-				  function(data, status, headers, config) {
-					console.log('GET: Error');
-				});
-			};
-
-
-		});
-
-	</script>
+	<script src="/app.js"></script>
 </body>
 </html>
