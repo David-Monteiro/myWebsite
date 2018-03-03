@@ -7,5 +7,5 @@ angular.module('app').service('PostSvc', function ($http) {
 	this.create = function(post) {
 		return $http.post('/api/posts', post);
 	};
-	
+
 });

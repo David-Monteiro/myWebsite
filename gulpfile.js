@@ -1,8 +1,17 @@
 var gulp = require('gulp');
-var concat = require('gulp-concat');
 
-gulp.task('js', function () {
-	gulp.src(['src/app/modules.js', 'src/app/**/*.js'])
-		.pipe(concat('app.js'))
-		.pipe(gulp.dest('public'));
+gulp.task('watch:js', ['js'], function(){
+	gulp.watch('src/app/**/*/js', ['js'])
 });
+
+gulp.task('watch:css', function(){
+	gulp.watch('src/assets/css/*.styl', ['css'])
+});
+
+var fs = require('fs');
+fs.readdirSync(__dirname + '/gulp')
+  .forEach(function(task){
+    require('./gulp/' + task);
+});
+
+gulp.task('dev', ['watch:css', 'watch:js', 'dev:server']);

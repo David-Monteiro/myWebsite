@@ -24,7 +24,7 @@ angular.module('app').controller('PostsCtrl', function($scope, PostSvc){
 
 	$scope.getPosts = function(){
 		PostSvc.fetch()
-		  .then(function(posts){ $scope.posts = posts.data; }, 
+		  .then(function(posts){ $scope.posts = posts.data; console.log('GET: success');}, 
 		  function(data, status, headers, config) {
 			console.log('GET: Error');
 		});
