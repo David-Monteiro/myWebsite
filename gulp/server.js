@@ -5,6 +5,7 @@ gulp.task('dev:server', function(){
 	nodemon({
 		script: 'server.js',
 		ext: 'js',
-		ignore: ['public*', 'gulp*', 'src*']
+		ignore: ['public*', 'gulp*']
 	});
+	console.log("server: gulp");
 });

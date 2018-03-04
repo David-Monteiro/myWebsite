@@ -13,4 +13,9 @@ gulp.task('js', function (cb) {
 		.pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('public'));
+		console.log("js: gulp");
+});
+
+gulp.task('watch:js', ['js'], function(){
+	gulp.watch('src/app/**/*.js', ['js'])
 });
