@@ -3,7 +3,7 @@ var stylus = require('gulp-stylus');
 
 gulp.task('css', function () {
 	gulp.src('src/assets/css/*.styl')
-		.pipe(stylus())
+		.pipe(stylus({ compress: true }))
 		.pipe(gulp.dest('public'));
 	console.log("css: gulp");
 });
