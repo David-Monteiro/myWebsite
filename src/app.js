@@ -1,4 +1,4 @@
-var app = angular.module('app', []);
+/*var app = angular.module('app', []);
 
 app.controller('PostsCtrl', function($scope, PostSvc){
 
@@ -42,3 +42,11 @@ app.service('PostSvc', function ($http) {
 		return $http.post('/api/posts', post);
 	};
 });
+
+app.config(function($routeProvider){
+		$routeProvider
+			.when("/", {
+				controller: "PostsCtrl",
+				templateUrl: "<h1>Banana</h1><p>Bananas contain around 75% water.</p>"
+		});
+});*/
