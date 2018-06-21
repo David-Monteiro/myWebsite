@@ -22,9 +22,7 @@ router.post('/', function (req, res, next) {
         user.password = hash;
         user.save(function(err) {
             if(err) { return next(err) }
-            res.send(201);
+            res.status(201).json({ message: 'Creation successful' });
         });
     });
 });
-
-module.exports = router;
