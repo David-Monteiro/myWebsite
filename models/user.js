@@ -1,8 +1,11 @@
 var db = require('../config/db')
+var schema = db.Schema;
 
-var user = mongoose.Schema({
+var userSchema = new schema ({
     username: { type: String, require: true },
-    password: { type: Stringm require: true, select: false}
+    password: { type: String, require: true, select: false}
 });
 
-module.exports = mongoose.model('User', user);
+var User = db.model('User', userSchema);
+
+module.exports = User;
