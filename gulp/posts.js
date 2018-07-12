@@ -8,7 +8,7 @@ gulp.task('posts', function () {
     console.log("posts: gulp");
 });
 
-gulp.task('watch:html', ['html'], function(){
+gulp.task('watch:posts', ['posts'], function(){
 	gulp.watch('src/app/components/login/login.html', ['posts'])
 	console.log("watch posts: gulp");
 });
