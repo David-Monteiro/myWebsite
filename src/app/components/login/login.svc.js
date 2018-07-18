@@ -6,12 +6,13 @@ angular.module('app')
             headers: { 'X-Auth': this.token }
         });
     }
-    svc.login = funcion(username, password) {
+
+    svc.login = function(username, password) {
         return $http.post('/api/sessions', {
             username: username, password: password
         }).then(function (val) {
             svc.token = val.data;
             return svc.getUser();
-        })
+        });
     }
 });
