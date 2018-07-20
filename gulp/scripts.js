@@ -5,17 +5,19 @@ var ngAnnotate = require('gulp-ng-annotate');
 var sourcemaps = require('gulp-sourcemaps');
 var pump = require('pump');
 
-gulp.task('js', function (cb) {
-	gulp.src(['src/app/modules.js', 'src/router.js'])
+gulp.task('js', function () {
+	gulp.src(['src/app/module.js', 'src/app/routes.js', 'src/app/components/**/*.js'])
 		.pipe(sourcemaps.init())
 		.pipe(concat('app.js'))
-		.pipe(ngAnnotate())
-		.pipe(uglify())
+		//.pipe(ngAnnotate())
+		//.pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('public'));
-		console.log("js: gulp");
-});
+		
+});console.log("js: gulp");
 
 gulp.task('watch:js', ['js'], function(){
-	gulp.watch('src/app/**/*.js', ['js'])
+
+	gulp.watch('src/app/**/*.js', ['js']); 
+	console.log("js watch: gulp");
 });
