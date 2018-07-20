@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="/app.css">
 
 </head>
-<body ng-app="app">
+	<body ng-app="app">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
 		<a class="navbar-brand" href="#"><img src="https://www.shareicon.net/data/32x32/2015/08/14/84858_moderator_512x512.png"> David Monteiro</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,10 +20,10 @@
 					<a class="nav-link" href="#/">About <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/#/">soon(Curriculum)</a>
+					<a class="nav-link" href="/#/">soon (Curriculum)</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/#/">soon(Portfolio)</a>
+					<a class="nav-link" href="/login">soon(Portfolio)</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/#/">soon(Contact)</a>
@@ -32,7 +32,8 @@
 		</div>
 	</nav>
 	<div ng-view style="margin-top:60px;"></div>
-	<!--<div class='container mt-5'   ng-init="getPosts()">
+<!--<div ng-controller="PostsCtrl">
+	<div class='container mt-5'   ng-init="getPosts()">
 	<h1> Recent Posts</h1>
     <form role='form'>
     	<div class='form-group'>
@@ -50,8 +51,15 @@
 			<span>{{post.body}}</span>
 		</li>
 	</ul>
-</div>-->
+</div></div>
 
+<div ng-controller="myCtrl" class="container mt-5">
+ 
+		<p>Input something in the input box:</p>
+		<p>Name: <input type="text" ng-model="name"></p>
+		<p ng-bind="name"></p>
+		<span> {{name}}</span>
+	</div>-->
 
 
 	<!-- Scripts -->
@@ -59,5 +67,13 @@
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 	<script src="/app.js"></script>
+	<script>
+			
+			angular.module('app').controller("myCtrl", function(){
+				this.ost = "Hello";
+			});
+			
+			
+		</script>
 </body>
 </html>
