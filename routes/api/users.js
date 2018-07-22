@@ -6,19 +6,20 @@ var config = require('../../config/config');
 
 router.route('/api/users')
     
-    .all(function(req, res, next){
+    .all(function (req, res, next){
         console.log(' user api call');
         next();
     })
 
-    .get(function (rq, res, next) {
+    .get(function (req, res, next) {
         if(!req.headers['x-auth']) {
-            return res.send(401);
+            return res.status(401);
         }
-        var auth = jwt.encode(req.headers['x-auth'], config.secret);
+        var token = req.headers['x-auth'];
+        var auth = jwt.decode(token, config.secret);
         User.findOne({username: auth.username}, function(err, user) {
             if(err) { return next(err) }
-            res.json(user);
+            res.status(201).json(user);
         })
     })
 
