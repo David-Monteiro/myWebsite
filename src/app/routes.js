@@ -2,8 +2,8 @@ angular.module('app')
 	.config(['$routeProvider', function($routeProvider){
 		$routeProvider
 			.when('/', {
-				templateUrl: 'login.html',
-				controller: 'LoginCtrl'			
+				templateUrl: 'register.html',
+				controller: 'RegisterCtrl'			
 			})
 			.when('/login', {
 				templateUrl: 'login.html',
