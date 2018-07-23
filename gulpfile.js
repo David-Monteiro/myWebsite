@@ -6,4 +6,14 @@ fs.readdirSync(__dirname + '/gulp')
     require('./gulp/' + task);
 });
 
-gulp.task('dev', ['watch:html', 'watch:posts', 'watch:login', 'watch:css', 'watch:js', 'dev:server']);
+gulp.task('dev', 
+	[
+		'watch:html', 
+		'watch:posts', 
+		'watch:login',
+		'watch:register', 
+		'watch:css', 
+		'watch:js', 
+		'dev:server'
+	]
+);
