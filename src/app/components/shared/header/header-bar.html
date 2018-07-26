@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
+	<a class="navbar-brand" href="#"><img src="https://www.shareicon.net/data/32x32/2015/08/14/84858_moderator_512x512.png"> David Monteiro</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse">
+
+		<ul class="nav navbar-nav navbar-right">
+			<li class="nav-item active">
+				<a class="nav-link" href="#/">About <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/#/">soon (Curriculum)</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/#/login">soon(Portfolio)</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/#/posts">soon(Contact)</a>
+			</li>
+		</ul>
+		<p ng-if='currentUser' class="navbar-text navbar-right">
+			Signed in as {{currentUser.username}}
+		</p>
+	</div>
+</nav>
