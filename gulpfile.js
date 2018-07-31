@@ -9,7 +9,7 @@ fs.readdirSync(__dirname + '/gulp')
 gulp.task('dev', 
 	[
 		'watch:html', 
-		'watch:posts', 
+		'watch:post', 
 		'watch:login',
 		'watch:register',
 		'watch:navBar',
@@ -18,6 +18,7 @@ gulp.task('dev',
 		'watch:skills',
 		'watch:portofolio',
 		'watch:homePage',
+		'watch:blogs',
 		'watch:css', 
 		'watch:js', 
 		'dev:server'
