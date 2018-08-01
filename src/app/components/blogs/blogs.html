@@ -11,12 +11,23 @@
         		</span>
         	</div>
         </form>
-        <ul class="list-group">
-    		<li class="list-group-item" ng-repeat="post in posts | orderBy:'-date'">
-    			<strong>{{post.username}} </strong>
-    			<span>{{post.body}}</span>
-    		</li>
-    	</ul>
-        <post-section><post-section>
+        
+    		<div ng-repeat="post in posts | orderBy:'-date'">
+    			<post-section 
+                    username = "{{post.username}}" 
+                    title = "{{post.title}}" 
+                    body = "{{post.body}}"
+                    tags = "Tag #1"
+                    date = "February 12, 2018"
+            ><post-section>
+    		</div>sdsda
+    	
+        <post-section 
+            username = "David"
+            title = "Post 44 - Lorem ipsum dolor sit amet, consectetur."
+            body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, augue ac fermentum volutpat, ipsum eros vehicula nisi, eu ullamcorper ex ante non elit. Pellentesque eu nisi venenatis, gravida tortor non, mollis mauris.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, augue ac fermentum volutpat, ipsum eros vehicula nisi, eu ullamcorper ex ante non elit. Pellentesque eu nisi venenatis, gravida tortor non, mollis mauris."
+            tags = "Tag #1"
+            date = "February 12, 2018"
+        ><post-section>
     </div>
 </div> 

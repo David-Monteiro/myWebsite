@@ -1,14 +1,17 @@
-angular.module('app').controller('PostsCtrl', function($scope, PostSvc){
+angular.module('app').controller('BlogsCtrl', function($scope, BlogsSvc){
 
 	$scope.addPost = function(){		
 
 		if($scope.postBody) {
 			var post = {
-				username : "david",
-				body : $scope.postBody
+				username : $scope.currentUser.username,
+				title: $scope.title,
+				body : $scope.postBody,
+				tags : $scope.tags,
+				body : $scope.date
 			};
 			console.log("POST: 1st step");
-			PostSvc.create(post)
+			BlogsSvc.create(post)
 			.then( function(data, status, headers, config) {
 				$scope.getPosts();
 				console.log("POST: success");
@@ -23,7 +26,8 @@ angular.module('app').controller('PostsCtrl', function($scope, PostSvc){
 	};
 
 	$scope.getPosts = function(){
-		PostSvc.fetch()
+		console.log('GETposts');
+		BlogsSvc.fetch()
 		  .then(function(posts){ $scope.posts = posts.data; console.log('GET: success');}, 
 		  function(data, status, headers, config) {
 			console.log('GET: Error');
