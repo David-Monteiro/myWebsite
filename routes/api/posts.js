@@ -20,7 +20,9 @@ router.route('/api/posts')
 	.post(function (req, res, next) {
 		var post = new Post({
 			username: req.body.username,
-			body: req.body.body
+			body: req.body.body,
+			title: req.body.title,
+			tags: req.body.tags
 		});
 		post.save(function (err, post) {
 			if(err) { return next(err) }
@@ -48,6 +50,9 @@ router.route('/api/posts/:post_id')
 		Post.findById(req.params.post_id, function(err, post) {
 			if(err) { res.send(err); }
 			post.body = req.body.body;
+			post.title = req.body.title;
+			post.tags = req.body.tags;
+
 
 			post.save(function(err) {
 				if(err) { res.send(err); }
