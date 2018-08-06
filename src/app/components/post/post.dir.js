@@ -5,10 +5,13 @@ angular.module('app').directive('postSection', function(){
 			username : '@',
 			title : '@',
 			body : '@',
-			tags : '@',
+			tags : '=',
 			date : '@'
 		},
-		templateUrl: "templates/post.html"
+		templateUrl: "templates/post.html",
+		link: function(scope, element, attrs){
+            scope.tags = attrs.tags;
+        }
 		
 	};
 });
