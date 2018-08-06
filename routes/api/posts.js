@@ -18,9 +18,10 @@ router.route('/api/posts')
 	})
 
 	.post(function (req, res, next) {
+		console.log(req.body);
 		var post = new Post({
 			username: req.body.username,
-			body: req.body.body,
+			body: req.body.postBody,
 			title: req.body.title,
 			tags: req.body.tags
 		});
