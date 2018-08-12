@@ -19,6 +19,7 @@ gulp.task('dev',
 		'watch:portofolio',
 		'watch:homePage',
 		'watch:blogs',
+		'watch:modal',
 		'watch:css', 
 		'watch:js', 
 		'dev:server'
