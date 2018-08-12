@@ -2,22 +2,24 @@
 <html>
 <head>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
 	<link href='https://fonts.googleapis.com/css?family=Bilbo Swash Caps' rel='stylesheet'>
 	<link rel="stylesheet" href="/app.css">
-	<nav-bar> </nav-bar>
+
 </head>
-	<body ng-app="app" ng-controller="ApplicationCtrl">
-	<nav-bar> </nav-bar>
-	 <div ng-view style="margin-top:80px;"></div>
+	<body ng-app="app" ng-controller="ApplicationCtrl"  >
+	<nav-bar ng-controller="ModalCtrl"> </nav-bar>
+	 <div ng-view style="margin-top:110px;"></div>
 	<!--<div ng-view></div> -->
 	<footer-section></footer-section>
 
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 	<script src="/app.js"></script>
 
 </body>
