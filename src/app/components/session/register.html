@@ -1,17 +1,23 @@
-<div class="bg-light rounded">
-	<form ng-submit="register(username, password, confirmation)">
+<form ng-submit="register(username, password, confirmation)" ng-controller="RegisterCtrl">
+	<div class="modal-header">
+		<h3 class="modal-title">Register</h3>
+	</div>
+	<div class="modal-body">
 		<div class="form-group row ">
-			<label class="col-sm-1 col-form-label">Username</label>
-			<input class="form-control col-sm-2" type="text" ng-model="username">
+			<label class="col-sm-4 col-form-label">Username</label>
+			<input class="form-control col-sm-5" type="text" ng-model="username">
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-1 col-form-label">Password</label>
-			<input class="form-control col-sm-2" type="password" ng-model="password">
+			<label class="col-sm-4 col-form-label">Password</label>
+			<input class="form-control col-sm-5" type="password" ng-model="password">
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-1 col-form-label">Confirm Password</label>
-			<input class="form-control form-control-sm col-sm-2 " type="password"  ng-model="confirmation">
+			<label class="col-sm-4 col-form-label">Confirm Password</label>
+			<input class="form-control col-sm-5 " type="password"  ng-model="confirmation">
 		</div>
-		<input class="btn btn-success btn-lg btn-block col-sm-2 ml-5" type="submit" value="Register">
-	</form>
-</div>
+	</div>
+	<div class="modal-footer">	
+		<button class="btn btn-outline-danger" type="button" ng-click="closeRegisterForm()">Cancel</button>
+		<input class="btn btn-success" type="submit" value="Register">
+	</div>
+</form>
