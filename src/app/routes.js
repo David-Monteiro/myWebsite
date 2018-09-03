@@ -1,16 +1,19 @@
 angular.module('app')
-	.config(['$routeProvider', function($routeProvider){
+	.config( function($routeProvider){
 		$routeProvider
 			.when('/', {
-				templateUrl: 'homePage.html',
-				controller: 'RegisterCtrl'			
+				templateUrl: 'homePage.html'		
 			})
-			.when('/login', {
-				templateUrl: 'login.html',
-				controller: 'LoginCtrl'				
+			.when('/blogs', {
+				templateUrl: 'blogs.html',
+				controller: 'BlogsCtrl'				
 			})
-			.when('/posts', {
-				templateUrl: 'posts.html',
-				controller: 'PostsCtrl'				
+			.when('/resume', {
+				templateUrl: 'resumePage.html'/*,
+				controller: 'PostsCtrl'		*/		
 			})
-}]);
+
+});
+
+
+	  
