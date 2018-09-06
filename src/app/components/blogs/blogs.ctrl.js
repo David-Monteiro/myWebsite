@@ -6,27 +6,32 @@ angular.module('app').controller('BlogsCtrl', function($scope, BlogsSvc){
 		//for (i = 0; i < numTags; i++) { 
 			$scope.tags.push($scope.tag1);
 		//}
-		if($scope.postBody) {
-			var post = {
-				username : "David1234",
-				title: $scope.title,
-				postBody : $scope.postBody,
-				tags : $scope.tags,
-				date : $scope.date
-			};
-			console.log("POST: 1st step");
-			BlogsSvc.create(post)
-			.then( function(data, status, headers, config) {
-				$scope.getPosts();
-				console.log("POST: success");
-			}, 
-			function(data, status, headers, config) {
-				console.error('POST: Error');
-			});	
-				
-			// Making the field empty
-			$scope.postBody=null;
-			$scope.tags = [];
+		if($scope.currentUser){
+			if($scope.postBody) {
+				var post = {
+					username : $scope.currentUser.username,
+					title: $scope.title,
+					postBody : $scope.postBody,
+					tags : $scope.tags,
+					date : $scope.date
+				};
+				console.log("POST: 1st step");
+				BlogsSvc.create(post)
+				.then( function(data, status, headers, config) {
+					$scope.getPosts();
+					console.log("POST: success");
+				}, 
+				function(data, status, headers, config) {
+					console.error('POST: Error');
+				});	
+					
+				// Making the field empty
+				$scope.username = null;
+				$scope.title = null;
+				$scope.postBody = null;
+				$scope.tags = [];
+				$scope.date = null;
+			}
 		}
 	};
 
@@ -65,6 +70,7 @@ angular.module('app').controller('BlogsCtrl', function($scope, BlogsSvc){
 	$scope.removeTag = function(elem){
 		//var btnClass = angular.element( document.querySelector( '#tagBtn' ) );
 		//var spanClass = angular.element( document.querySelector( '#tagSpan' ) );
+		numTags--;
 		var tagClass = angular.element( elem.currentTarget.parentElement.parentElement );
 		tagClass.remove();
 
