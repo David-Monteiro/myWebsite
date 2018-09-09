@@ -1,68 +1,43 @@
 <!-- Portofolio-->
 <div ng-controller="portofolioCtrl as panel" class="mb-5 container-fluid">
 
-		<div class="container ">	
+	<div class="container ">	
 		<div class="col-lg-8 mx-auto text-center">
 			<h2 class="section-title">Projects</h2>
 			<hr class="my-4">
 		</div>
 	</div>
+	<div class="container-fluid">
 	<div class="card-group">
 	
-		<div class="card" ng-mouseover="cardHover[0] = true" ng-mouseleave="cardHover[0] = false">
-				<img class="card-img-top hovering: cardHover[0]" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/eye-catching-colorful-paints-art-header_orig.jpg" alt="Card image cap" >	
-				<div class="card-img-overlay testy1">x
-				</div>
-				<div class="card-img-overlay" ng-show="cardHover[0]" ng-click="selectPanel(1)">
-					<p class="align-middle text-danger">Card title 1</p>
-				</div>
-
-
+		<div class="card projHero" ng-mouseover="cardHover[0] = true" ng-mouseleave="cardHover[0] = false">
+			<img class="card-img-top" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/eye-catching-colorful-paints-art-header_orig.jpg" alt="Card image cap" >
+			<h1 class="card-img-overlay text-center" ng-show="cardHover[0]" ng-click="selectPanel(0)">Project 1</h1>
 		</div>
-		<div class="card testy2: hover" ng-mouseover="cardHover[1] = true" ng-mouseleave="cardHover[1] = false">
-			<a class="" href ng-click="selectPanel(2)" >
-				<img class="card-img-top" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/4495832_orig.jpg" alt="Card image cap">
-			</a>
-			<div class="card-img-overlay text-danger" ng-show="cardHover[1]" >
-				<span class="">Card title 2</span>
-			</div>
-
-		</div>
-  
+		<div class="card projHero" ng-mouseover="cardHover[1] = true" ng-mouseleave="cardHover[1] = false">
+			<img class="card-img-top" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/4495832_orig.jpg" alt="Card image cap" >	
+			<h1 class="card-img-overlay text-center" ng-show="cardHover[1]" ng-click="selectPanel(1)">Project 2</h1>
+		</div>  
 	</div>
 	
-	<div class="bg-light text-dark px-5 py-3" ng-show="isSelected(1)">
-		<h5 class="">Card 1: Lorem ipsum dolor sit amet</h5>
-		<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, augue ac fermentum volutpat, ipsum eros vehicula nisi, eu ullamcorper ex ante non elit. Pellentesque eu nisi venenatis, gravida tortor non, mollis mauris.</p>
+	<div class="bg-light text-dark px-5 py-3 border-right border-left" ng-repeat="project in projects" ng-show="isSelected($index)">
+		<h5 class="card-title">{{project.title}}</h5>
+		<p class="card-text">{{project.description}}</p>
 	</div>
-	<div class="card-body" ng-show="isSelected(2)">
-		<h5 class="card-title">Card 2: Lorem ipsum dolor sit amet</h5>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, augue ac fermentum volutpat, ipsum eros vehicula nisi, eu ullamcorper ex ante non elit. Pellentesque eu nisi venenatis, gravida tortor non, mollis mauris. Aenean metus tortor, vestibulum sed ornare ac, porttitor at diam. Aenean ut magna ac ante placerat venenatis. Aenean vitae dolor consequat, hendrerit lectus vitae, molestie massa. Morbi ut ipsum at odio lacinia tempus eu ut odio. Praesent ullamcorper tortor dui, vel lacinia velit faucibus vitae.</p>
-		<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-	</div>
-	<div class="bg-light text-dark px-5 py-3" ng-show="isSelected(3)">
-		<h5 class="card-title">Card 3: Lorem ipsum dolor sit amet</h5>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, augue ac fermentum volutpat, ipsum eros vehicula nisi, eu ullamcorper ex ante non elit. Pellentesque eu nisi venenatis, gravida tortor non, mollis mauris. Aenean metus tortor, vestibulum sed ornare ac, porttitor at diam. Aenean ut magna ac ante placerat venenatis. Aenean vitae dolor consequat, hendrerit lectus vitae, molestie massa. Morbi ut ipsum at odio lacinia tempus eu ut odio. Praesent ullamcorper tortor dui, vel lacinia velit faucibus vitae.</p><small class="text-muted">Pellentesque eu nisi </small></p>
-	</div>
-	<div class="card-body" ng-show="isSelected(4)">
-		<h5 class="card-title">Card 4: Lorem ipsum dolor sit amet</h5>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus facilisis, augue ac fermentum volutpat, ipsum eros vehicula nisi, eu ullamcorper ex ante non elit. Pellentesque eu nisi venenatis, gravida tortor non, mollis mauris.</p>
-		<p class="card-text"><small class="text-muted">Pellentesque eu nisi </small></p>
-	</div>
+
 
 	<div class="card-group">
-
-		<div class="card">
-			<a class="testy2" href ng-click="selectPanel(3)" >
-				<img class="card-img-top" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/5832164_orig.jpg" alt="Card image cap">
-			</a>
+		<div class="card projHero" ng-mouseover="cardHover[2] = true" ng-mouseleave="cardHover[2] = false">
+			<img class="card-img-bottom" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/5832164_orig.jpg" alt="Card image cap" >	
+			<h1 class="card-img-overlay text-center text-dark" ng-show="cardHover[2]" ng-click="selectPanel(2)">Project 3</h1>
 		</div>
-		<div class="card">
-			<a class="" href ng-click="selectPanel(4)" >
-				<img class="card-img-top" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/6370839_orig.jpg" alt="Card image cap">
-			</a>
+		<div class="card projHero" ng-mouseover="cardHover[3] = true" ng-mouseleave="cardHover[3] = false">
+			<img class="card-img-bottom" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/6370839_orig.jpg" alt="Card image cap" >	
+			<h1 class="card-img-overlay text-center text-dark" ng-show="cardHover[3]" ng-click="selectPanel(3)">Project 4</h1>
 		</div>
 	</div>
+</div>
+
 
 </div>
 <hr>
