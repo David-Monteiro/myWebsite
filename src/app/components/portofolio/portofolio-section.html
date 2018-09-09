@@ -1,5 +1,5 @@
 <!-- Portofolio-->
-<div ng-controller="portofolioCtrl as panel" class="mb-5 container-fluid">
+<div  class="mb-5 container-fluid" ng-init="setWindowSize()">
 
 	<div class="container ">	
 		<div class="col-lg-8 mx-auto text-center">
@@ -7,37 +7,45 @@
 			<hr class="my-4">
 		</div>
 	</div>
-	<div class="container-fluid">
-	<div class="card-group">
-	
-		<div class="card projHero" ng-mouseover="cardHover[0] = true" ng-mouseleave="cardHover[0] = false">
-			<img class="card-img-top" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/eye-catching-colorful-paints-art-header_orig.jpg" alt="Card image cap" >
-			<h1 class="card-img-overlay text-center" ng-show="cardHover[0]" ng-click="selectPanel(0)">Project 1</h1>
-		</div>
-		<div class="card projHero" ng-mouseover="cardHover[1] = true" ng-mouseleave="cardHover[1] = false">
-			<img class="card-img-top" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/4495832_orig.jpg" alt="Card image cap" >	
-			<h1 class="card-img-overlay text-center" ng-show="cardHover[1]" ng-click="selectPanel(1)">Project 2</h1>
-		</div>  
-	</div>
-	
-	<div class="bg-light text-dark px-5 py-3 border-right border-left" ng-repeat="project in projects" ng-show="isSelected($index)">
-		<h5 class="card-title">{{project.title}}</h5>
-		<p class="card-text">{{project.description}}</p>
-	</div>
 
+	<!-- - - - - - -  - - - -  - - - - - - - - - - - - - - - - - - - -  -->
 
-	<div class="card-group">
-		<div class="card projHero" ng-mouseover="cardHover[2] = true" ng-mouseleave="cardHover[2] = false">
-			<img class="card-img-bottom" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/5832164_orig.jpg" alt="Card image cap" >	
-			<h1 class="card-img-overlay text-center text-dark" ng-show="cardHover[2]" ng-click="selectPanel(2)">Project 3</h1>
+	<div class="container-fluid" ng-if="windowWidth > 600">
+		<div class="card-group">
+			<div class="card projHero" ng-repeat="project in projects" ng-if="$index == 0 || $index == 1" ng-mouseover="cardHover[$index] = true" ng-mouseleave="cardHover[$index] = false" >
+				<img class="card-img-top" ng-src="{{project.image}}" >
+				<h1 class="card-img-overlay text-center" ng-show="cardHover[$index]" ng-click="selectPanel($index)">{{project.hero}}</h1>
+			</div>
 		</div>
-		<div class="card projHero" ng-mouseover="cardHover[3] = true" ng-mouseleave="cardHover[3] = false">
-			<img class="card-img-bottom" src="http://headerart.weebly.com/uploads/5/7/5/7/5757212/6370839_orig.jpg" alt="Card image cap" >	
-			<h1 class="card-img-overlay text-center text-dark" ng-show="cardHover[3]" ng-click="selectPanel(3)">Project 4</h1>
+		
+		<div class="bg-light text-dark px-5 py-3 border-right border-left"  ng-show="panelOpen">
+			<h5 class="card-title">{{projects[panel].title}}</h5>
+			<p class="card-text">{{projects[panel].description}}</p>
+		</div>
+
+		<div class="card-group">
+		
+			<div class="card projHero" ng-repeat="project in projects" ng-if="$index == 2 || $index == 3" ng-mouseover="cardHover[$index] = true" ng-mouseleave="cardHover[$index] = false" >
+				<img class="card-img-bottom" ng-src="{{project.image}}" >
+				<h1 class="card-img-overlay text-center" ng-show="cardHover[$index]" ng-click="selectPanel($index)">{{project.hero}}</h1>
+			</div>
 		</div>
 	</div>
-</div>
 
+<!-- - - - - - -  - - - -  - - - - - - - - - - - - - - - - - - - -  -->
+
+	<div class="container-fluid" ng-if="windowWidth <= 600">
+		<div ng-repeat="project in projects">
+			<div class="card projHero" ng-mouseover="cardHover[$index] = true" ng-mouseleave="cardHover[$index] = false" >
+				<img class="card-img-top" ng-src="{{project.image}}" >
+				<h1 class="card-img-overlay text-center" ng-show="cardHover[$index]" ng-click="selectPanel($index)">{{project.hero}}</h1>
+			</div>
+			<div class="bg-light text-dark px-5 py-3 border-right border-left" ng-show="panelOpen && $index === panel">
+				<h5 class="card-title">{{project.title}}</h5>
+				<p class="card-text">{{project.description}}</p>
+			</div>
+		</div>
+	</div>
 
 </div>
 <hr>
