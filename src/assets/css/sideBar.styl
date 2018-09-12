@@ -10,7 +10,8 @@
 	text-transform: uppercase;
 }
 
-@media (min-width: 992px) {
+
+@media (min-width: 1150px) {
 	#sideNav {
 		background: #F9812A;
 		text-align: center;
@@ -26,7 +27,7 @@
 	}
 	#sideNav .navbar-brand {
 		display: flex;
-		margin: auto auto 0;
+		margin: 55px auto 0px;
 		padding: 0.5rem;
 	}
 	#sideNav .navbar-brand .img-profile {
@@ -34,21 +35,35 @@
 		max-height: 10rem;
 		border: 0.5rem solid rgba(255, 255, 255, 0.2);
 	}
-	#sideNav .navbar-collapse {
+	#sideNav {
 		display: flex;
 		align-items: flex-start;
 		flex-grow: 0;
 		width: 100%;
 		margin-bottom: auto;
 	}
-	#sideNav .navbar-collapse .navbar-nav {
+	#sideNav .navbar-nav {
 		flex-direction: column;
 		width: 100%;
 	}
-	#sideNav .navbar-collapse .navbar-nav .nav-item {
+	#sideNav .navbar-nav .nav-item {
 		display: block;
 	}
-	#sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+	#sideNav .navbar-nav .nav-item .nav-link {
 		display: block;
+	}
+	#sidebarContent {
+		margin-bottom: auto;
+		display: flex!important;
+		-ms-flex-preferred-size: auto;
+		flex-basis: auto;
+		flex-grow: 1;
+		-webkit-box-flex: 1;
+	}
+}
+
+@media (max-width:1149px) { 
+	#sideNav{
+		display: none; 
 	}
 }
