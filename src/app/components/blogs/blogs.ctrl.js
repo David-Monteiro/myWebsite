@@ -46,8 +46,9 @@ angular.module('app').controller('BlogsCtrl', function($scope, BlogsSvc){
 
 	$scope.addTag = function(elem){
 		//elem = elem.target.parentElement.parentElement.parentElement;
+		console.log('run e ' );
 		numTags++;
-		var newTagElemSection = "<div class='form-group row'><label class='col-sm-2 col-form-label'>Tag</label><div class='col-7'><input ng-model='tag" + numTags +"' class='form-control' /></div><span class='input-group-btn'><button class='btn btn-success' id='tagBtn' ng-click='addTag($event)' type='button'><span class='fa fa-plus' id='tagSpan' ></span></button></span></div>";
+		var newTagElemSection = "<div class='form-group row'><label class='col-sm-2 col-form-label'>Tag</label><div class='col-7'><input ng-model='tag" + numTags +"' class='form-control' /></div><span class='input-group-btn'><button class='btn btn-success' ng-click='addTag($event)' type='button'><span class='fa fa-plus' id='tagSpan' ></span></button></span></div>";
 		var currentTagElemSection = "<div class='form-group row'><label class='col-sm-2 col-form-label'>Tag</label><div class='col-7'><input ng-model='tag" + (numTags - 1) +"' class='form-control' /></div><span class='input-group-btn'><button class='btn btn-danger' ng-click='removeTag($event)' type='button'><span class='fa fa-minus'></span></button></span></div>";
 
 		var tagClass = angular.element( elem.currentTarget.parentElement.parentElement );
