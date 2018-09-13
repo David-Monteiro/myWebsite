@@ -8,5 +8,5 @@ gulp.task('blogsPage', function () {
 });
 
 gulp.task('watch:blogsPage', ['blogsPage'], function(){
-	gulp.watch('src/app/components/blogsPage/blogs.html', ['blogs']);
+	gulp.watch('src/app/components/blogsPage/blogs.html', ['blogsPage']);
 });
