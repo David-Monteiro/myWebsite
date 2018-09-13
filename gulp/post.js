@@ -2,13 +2,11 @@ var gulp = require('gulp');
 var htmlMinify = require("gulp-html-minify");
 
 gulp.task('post', function () {
-    gulp.src('src/app/components/post/post.html')
+    gulp.src('src/app/components/blogsPage/post/post.html')
     .pipe(htmlMinify())
     .pipe(gulp.dest('public/templates'));
-    console.log("post: gulp");
 });
 
 gulp.task('watch:post', ['post'], function(){
-	gulp.watch('src/app/components/post/post.html', ['post'])
-	console.log("watch post: gulp");
+	gulp.watch('src/app/components/blogsPage/post/post.html', ['post']);
 });

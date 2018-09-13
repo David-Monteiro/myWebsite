@@ -9,15 +9,14 @@ gulp.task('js', function () {
 	gulp.src(['src/app/module.js', 'src/app/routes.js', 'src/app/components/**/*.js'])
 		.pipe(sourcemaps.init())
 		.pipe(concat('app.js'))
-		//.pipe(ngAnnotate())
-		//.pipe(uglify())
+		.pipe(ngAnnotate())
+		.pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('public'));
 		
-});console.log("js: gulp");
+});
 
 gulp.task('watch:js', ['js'], function(){
 
-	gulp.watch('src/app/**/*.js', ['js']); 
-	console.log("js watch: gulp");
+	gulp.watch('src/app/**/*.js', ['js']);
 });

@@ -7,5 +7,4 @@ gulp.task('dev:server', function(){
 		ext: 'js',
 		ignore: ['public*', 'gulp*']
 	});
-	console.log("server: gulp");
 });

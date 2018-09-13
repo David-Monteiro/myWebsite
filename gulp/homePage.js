@@ -5,10 +5,8 @@ gulp.task('homePage', function () {
     gulp.src('src/app/components/homePage/homePage.html')
     .pipe(htmlMinify())
     .pipe(gulp.dest('public'));
-    console.log("homePage: gulp");
 });
     
 gulp.task('watch:homePage', ['homePage'], function(){
-	gulp.watch('src/app/components/homePage/homePage.html', ['homePage'])
-	console.log("watch homePage: gulp");
+	gulp.watch('src/app/components/homePage/homePage.html', ['homePage']);
 });
