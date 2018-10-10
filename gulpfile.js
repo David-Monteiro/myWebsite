@@ -8,6 +8,7 @@ fs.readdirSync(__dirname + '/gulp')
 
 gulp.task('dev', 
 	[
+		'watch:image',
 		'watch:html',
 		'watch:homePage',
 		'watch:blogsPage',
