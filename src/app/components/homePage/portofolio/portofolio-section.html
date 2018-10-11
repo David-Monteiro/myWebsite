@@ -21,6 +21,9 @@
 		<div class="bg-light text-dark px-5 py-3 border-right border-left"  ng-show="panelOpen">
 			<h5 class="card-title">{{projects[panel].title}}</h5>
 			<p class="card-text">{{projects[panel].description}}</p>
+			<span class="text-muted">Follow the 
+				<a ng-href="{{projects[panel].link}}" class="card-link"> link</a> to see the source on Github
+			</span>
 		</div>
 
 		<div class="card-group">
@@ -43,6 +46,9 @@
 			<div class="bg-light text-dark px-5 py-3 border-right border-left" ng-show="panelOpen && $index === panel">
 				<h5 class="card-title">{{project.title}}</h5>
 				<p class="card-text">{{project.description}}</p>
+				<span class="text-muted">Follow the 
+					<a ng-href="{{project.link}}" class="card-link"> link</a> to see the source on Github
+				</span>
 			</div>
 		</div>
 	</div>
