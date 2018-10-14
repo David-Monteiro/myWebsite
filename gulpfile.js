@@ -8,6 +8,12 @@ fs.readdirSync(__dirname + '/gulp')
 
 gulp.task('dev', 
 	[
+		'watch',
+		'dev:server'
+	]
+);
+
+gulp.task('watch', [
 		'watch:image',
 		'watch:html',
 		'watch:homePage',
@@ -25,7 +31,28 @@ gulp.task('dev',
 		'watch:sideBar',
 		'watch:post',
 		'watch:css', 
-		'watch:js', 
-		'dev:server'
+		'watch:js'
+	]
+);
+
+gulp.task('build', [
+		'image',
+		'html',
+		'homePage',
+		'blogsPage',
+		'resumePage',
+		'modal', 
+		'login',
+		'register',
+		'navBar',
+		'footer',
+		'header',
+		'skills',
+		'portofolio',
+		'resume',
+		'sideBar',
+		'post',
+		'css', 
+		'js'
 	]
 );
