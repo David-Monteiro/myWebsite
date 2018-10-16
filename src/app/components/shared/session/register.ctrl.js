@@ -1,5 +1,5 @@
 angular.module('app')
-.controller('RegisterCtrl', function($scope, UserSvc) {
+.controller('RegisterCtrl', function($scope, $window, UserSvc) {
 
 //add confirmation to register scope
 	$scope.register = function(username, password, passValidator){
@@ -14,5 +14,9 @@ angular.module('app')
 	$scope.closeRegisterForm = function() {
 		$scope.$root.$broadcast('closeModal');
 	}
+
+	$scope.outOfOrder = function() {
+		$window.alert("Sorry...\nTemporarily out of service");
+	};
 
 });
