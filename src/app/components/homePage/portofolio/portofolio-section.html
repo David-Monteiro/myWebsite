@@ -10,7 +10,7 @@
 
 	<!-- - - - - - -  - - - -  - - - - - - - - - - - - - - - - - - - -  -->
 
-	<div class="container-fluid" ng-if="windowWidth > 600">
+	<div class="container-fluid" ng-if="windowWidth > 800">
 		<div class="card-group">
 			<div class="card projHero" ng-repeat="project in projects" ng-if="$index == 0 || $index == 1" ng-mouseover="cardHover[$index] = true" ng-mouseleave="cardHover[$index] = false" >
 				<img class="card-img-top" ng-src="{{project.image}}" >
@@ -19,11 +19,13 @@
 		</div>
 		
 		<div class="bg-light text-dark px-5 py-3 border-right border-left"  ng-show="panelOpen">
+			<div class="col-lg-10 col-md-12 mx-auto">
 			<h5 class="card-title">{{projects[panel].title}}</h5>
 			<p class="card-text">{{projects[panel].description}}</p>
 			<span class="text-muted">Follow the 
 				<a ng-href="{{projects[panel].link}}" class="card-link"> link</a> to see the source on Github
 			</span>
+		</div>
 		</div>
 
 		<div class="card-group">
@@ -37,7 +39,7 @@
 
 <!-- - - - - - -  - - - -  - - - - - - - - - - - - - - - - - - - -  -->
 
-	<div class="container-fluid" ng-if="windowWidth <= 600">
+	<div class="container-fluid" ng-if="windowWidth <= 800">
 		<div ng-repeat="project in projects">
 			<div class="card projHero" ng-mouseover="cardHover[$index] = true" ng-mouseleave="cardHover[$index] = false" >
 				<img class="card-img-top" ng-src="{{project.image}}" >
