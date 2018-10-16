@@ -12,8 +12,7 @@ angular.module('app').controller('BlogsCtrl', function($scope, BlogsSvc){
 					username : $scope.currentUser.username,
 					title: $scope.title,
 					postBody : $scope.postBody,
-					tags : $scope.tags,
-					date : $scope.date
+					tags : $scope.tags
 				};
 				console.log("POST: 1st step");
 				BlogsSvc.create(post)
@@ -30,7 +29,6 @@ angular.module('app').controller('BlogsCtrl', function($scope, BlogsSvc){
 				$scope.title = null;
 				$scope.postBody = null;
 				$scope.tags = [];
-				$scope.date = null;
 			}
 		}
 	};
