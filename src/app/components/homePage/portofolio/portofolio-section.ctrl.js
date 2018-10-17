@@ -30,7 +30,7 @@ var myProjects = [
 		name: "My Website",
 		title: "My Website",
 		hero: "My Website",
-		description: "Website created making use if the famous MEAN stack with the intent of learning new programming languages and technologies. Upon building the website, its main audience are students seeking different approaches to coding problems and to any one else interested in my core skills and abilities as the website links with my GitHub, for those interested in viewing my projects source code. The website further reassures its value and intent with its audience as it contains a blog section where O continuously insert my input on personal projects and or new technologies I am experimenting.",
+		description: "Website created making use if the famous MEAN stack with the intent of learning new programming languages and technologies. Upon building the website, its main audience are students seeking different approaches to coding problems and to any one else interested in my core skills and abilities as the website links with my GitHub, for those interested in viewing my projects source code. The website further reassures its value and intent with its audience as it contains a blog section where I continuously insert my input on personal projects and or new technologies I am experimenting.",
 		link: "https://github.com/David-Monteiro/myWebsite",
 		//image: "http://headerart.weebly.com/uploads/5/7/5/7/5757212/6370839_orig.jpg"
 		image: "images/aziz-acharki-549137-unsplash.jpg"
