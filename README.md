@@ -6,7 +6,6 @@ MyWebsite was developed using the MEAN stack. It contains all sort of informatio
 
 ## Domains
 
-* see [CNAME](https://github.com/username/username.github.io/blob/master/CNAME) file
 * https://morning-gorge-69836.herokuapp.com/ 
 * http://david-monteiro.com
 
